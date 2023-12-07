@@ -21,6 +21,14 @@
             </a>
             <h1 id="welcome">Hi! I'm CiCi. How can I help?</h1>
         </div>
+
+        <div id="sample-questions">
+            <p class="sample-question" onclick="populateInput('What is your name?')">What is your name?</p>
+            <p class="sample-question" onclick="populateInput('Tell me about your services')">Tell me about your services</p>
+            <p class="sample-question" onclick="populateInput('How can I contact support?')">How can I contact support?</p>
+        </div>
+
+
         <div id = 'chatbot'>
             <div id="input-box">
                 <form id="input-form" method="POST" action="/ask">
@@ -33,6 +41,7 @@
                 </message-container>
                 </form>
             </div>
+
             
             <p id="response"></p>
             <div id="spinner" style = "display:none;"
@@ -46,6 +55,14 @@
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
+            // populate input field when default questions are clicked on
+            function populateInput(question) {
+                // set value of the input field to the clicked question
+                $('#user_question').val(question);
+
+                // trigger form submission, send question to the API
+                $('#input-form').submit();
+            }
 
             $(document).ready(function() {
                 $('#input-form').submit(function(event) {
@@ -57,22 +74,23 @@
                         url: '/ask',
                         data: {user_question: userQuestion},
                         success: function(data) {
-                            //$('#response').text(data.response);
+                            //initializing markdown reader 
                             var md = new window.markdownit({
                                 html: true,
                                 linkify: true,
                             });
-                            var html = md.render(data.response);
-                            // Use markdown-it to render the Markdown text to HTML
-                            // var md = window.markdownit();
-                            // var html = md.render(data.response);
 
-                            // // Set the HTML content to the response element
+                            // reading markdown response as html
+                            var html = md.render(data.response);
+
+                            // outputting html to user to read
                             $('#response').html(html);
                         },
+                        // when answer from API is loading 
                         beforeSend: function (){
                             $("#spinner").show();
                         },
+                        // once answer from API has been received
                         complete: function() {
                             $("#spinner").hide();
                         }

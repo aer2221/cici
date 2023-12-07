@@ -3,6 +3,26 @@ html {
   width: 100%;
 }
 
+#sample-questions {
+  margin-top: 20px; /* Adjust the top margin as needed */
+  flex-direction:row;
+}
+
+.sample-question {
+  cursor: pointer;
+  color: #158888; /* Adjust the text color */
+  font-size: 16px; /* Adjust the font size */
+  margin: 5px 0; /* Adjust the margin as needed */
+  transition: color 0.3s ease; /* Add a smooth color transition on hover */
+
+  /* Optional: Add additional styling for hover effect */
+}
+
+.sample-question:hover {
+  color: #3b1745; /* Change the text color on hover */
+}
+
+
 #user_question{
   /* making background emulate larger background gradient*/
   background: linear-gradient(90deg, rgba(15, 80, 80, 0.2) 0%, #158888 100%);
@@ -33,7 +53,7 @@ message-container {
 
 #submit-button img {
   height: 30px; /* Adjust the height as needed */
-  width: 50px; /* Adjust the width as needed */
+  width: 55px; /* Adjust the width as needed */
 }
 
 #submit-button {
@@ -97,6 +117,7 @@ message-container {
 
 .chatbot-container {
   width: 100%;
+  font-family: 'Source Code Pro', monospace;
   background: linear-gradient(180deg, rgb(31.02, 41.18, 81.81) 0%, rgb(59.85, 23.02, 69.06) 100%);
   background-color: rgba(255, 255, 255, 1);
   color: white;
@@ -113,6 +134,8 @@ message-container {
   min-height:500px;
   margin-top: 5%;
   margin-bottom:5%;
+  /* possible green border -- for when chatbot is purple to blend with background */ 
+  /* border: 2px solid #158888; */
   background: linear-gradient(90deg, rgba(22, 136, 136, 0.28) 0%, #158888 100%) border-box;
   border-radius: 15px;
   font-family: 'Source Code Pro', monospace;
