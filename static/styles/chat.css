@@ -61,6 +61,13 @@ message-container {
   border: none;
   cursor: pointer; /* Adjust the left margin as needed */
   margin-right:auto;
+  border-radius: 10px; 
+  transition: box-shadow 0.2s ease; 
+}
+
+#submit-button:hover {
+  /* background-color: #3b1745; */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
 }
 
 #response a {
