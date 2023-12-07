@@ -15,14 +15,16 @@
 
     <div class = "chatbot-container">
         <div id = 'header'>
-            <img id="robot-head" src="static/robot_head.png">
+            <a href="/"> 
+                <img id="robot-head" src="static/robot_head.png">
+            </a>
             <h1 id="welcome">Hi! I'm CiCi. How can I help?</h1>
         </div>
         <div id = 'chatbot'>
             <div id="input-box">
                 <form id="input-form" method="POST" action="/ask">
                 <message-container>
-                    <input type="text" id="user_question" name="user_question" placeholder = 'Ask CiCi a question!'required>
+                    <textarea type="text" id="user_question" name="user_question" placeholder = 'Ask CiCi a question!'required></textarea>
                     <input type = "submit" style="display: none"/>
                 </message-container>
                 </form>
@@ -35,7 +37,7 @@
                 </div>
             </div>
             
-        </div>
+    </div>
         
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -4,7 +4,7 @@ html {
 }
 
 #user_question{
-  display:block;
+  /* display:block; */
   margin-left:auto;
   margin-right:auto;
   margin-top: 20px;
@@ -12,16 +12,22 @@ html {
   border-radius: 8px;
   border-style: solid;
   border-color: white;
+  min-height: 40px;
+  /* overflow: hidden; 
+  transition: height 0.3s; 
+  resize: vertical; */
 }
 
 body {
+  /* height: 100%; */
+  width: 100%;
+  margin: 0; /* Add this line to remove default margin */
+  padding: 0; /* Add this line to remove default padding */
   background: linear-gradient(180deg, rgb(31.02, 41.18, 81.81) 0%, rgb(59.85, 23.02, 69.06) 100%);
   background-color: rgba(255, 255, 255, 1);
   color: white;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  width: 100%;
 }
 
 #input-form{
@@ -69,17 +75,15 @@ body {
 #chatbot {
   color: white;
   width: 1000px;
-  height: 500px;
-  margin-top: 50px;
+  min-height:500px;
+  margin-top: 5%;
   background: linear-gradient(90deg, rgba(22, 136, 136, 0.28) 0%, #158888 100%) border-box;
   border-radius: 15px;
   font-family: 'Source Code Pro', monospace;
-
   display:block;
   margin-left:auto;
   margin-right:auto;
   text-align: center;
-
 }
 
 message-container {
@@ -102,7 +106,8 @@ message-container {
 
 #response{
   color: white;
-  margin: 20px 30px 20px 30px;
+  margin: 2%;
+  /* margin: 20px 30px 20px 30px; */
   text-align: left;
 }
 
