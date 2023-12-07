@@ -9,7 +9,6 @@ html {
   border-color: #3b1745;
   color: white; 
   margin-left:auto;
-  margin-right:auto;
   margin-top: 20px;
   width: 600px;
   border-radius: 8px;
@@ -18,9 +17,30 @@ html {
   min-height: 40px;
 }
 
+message-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 #user_question::placeholder {
   color: rgba(255, 255, 255, 0.7); /* Adjust the alpha value for the desired lightness */
 }
+
+#submit-button img {
+  height: 30px; /* Adjust the height as needed */
+  width: 50px; /* Adjust the width as needed */
+}
+
+#submit-button {
+  background: none;
+  border: none;
+  cursor: pointer; /* Adjust the left margin as needed */
+  margin-right:auto;
+}
+
 
 
 /* body {
@@ -92,7 +112,9 @@ html {
 message-container {
   width: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 #conversation {
