@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="static/styles/chat.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>CiCi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;700&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+
+    <div class = "chatbot-container">
+        <div id = 'header'>
+            <img id="robot-head" src="static/robot_head.png">
+            <h1 id="welcome">Hi! I'm CiCi. How can I help?</h1>
+        </div>
+        <div id = 'chatbot'>
+            <div id="input-box">
+                <form id="input-form" method="POST" action="/ask">
+                <message-container>
+                    <input type="text" id="user_question" name="user_question" placeholder = 'Ask CiCi a question!'required>
+                    <input type = "submit" style="display: none"/>
+                </message-container>
+                </form>
+            </div>
+            
+            <p id="response"></p>
+            <div id="spinner" style = "display:none;"
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            
+        </div>
+        
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                $('#input-form').submit(function(event) {
+                    event.preventDefault();
+                    var userQuestion = $('#user_question').val();
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/ask',
+                        data: {user_question: userQuestion},
+                        success: function(data) {
+                            $('#response').text(data.response);
+                        },
+                        beforeSend: function (){
+                            $("#spinner").show();
+                        },
+                        complete: function() {
+                            $("#spinner").hide();
+                        }
+                    });
+                });
+            });
+        </script>
+</body>
+</html>
