@@ -8,6 +8,7 @@ import os
 import openai
 import time
 import secrets_2
+import markdown
 
 
 app = Flask(__name__)
@@ -66,11 +67,8 @@ def ask():
     If the question is related to CS faculty, you can return this link as part of your answer: "https://www.cs.columbia.edu/people/faculty/"
     If the question is related to CS student organizations, you can return this link as part of your answer: "https://www.cs.columbia.edu/student-organizations/"
     If the question is related to prospective CS students FAQ, you can return this link as part of your answer: "https://www.cs.columbia.edu/education/undergraduate/prospectivefaq/"
-    Return your answer in markdown format.
+    You must return your answer in markdown format, including clickable links.
     This is the question you should answer: {input_prompt} \n 
-
-    Your answer should be at 
-    least 100 words and no more than 300 words. This is the question you should answer: {input_prompt} \n
     """
 
     chat_history = []

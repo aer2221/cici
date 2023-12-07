@@ -43,6 +43,17 @@ message-container {
   margin-right:auto;
 }
 
+#response a {
+  color:  #000000; /* Change the color to your preferred color, e.g., yellow (#ffcc00) */
+  text-decoration: underline; /* Add underline to the links */
+}
+
+#response a:hover {
+  text-decoration: none; /* Remove underline on hover if not needed */
+  background-color: #483D8B; /* Change the background color on hover to your preferred color, e.g., dark green (#004d00) */
+  color: #ffffff; /* Change the text color on hover to improve readability, e.g., white (#ffffff) */
+}
+
 
 
 /* body {
