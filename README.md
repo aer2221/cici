@@ -16,6 +16,11 @@ Backend: Created embeddings using Columbia CS Advising documents and stored them
 
 Frontend: HTML/CSS/JavaScript
 
+## How I improved CiCi from the original hackathon version
+- backend improvements: upgrading to GPT-4, prompt engineering, adding additional Columbia CS documentation to better train CiCi
+- frontend improvements: bug fixes (text going outside the page, items shifting once text appears, etc), adding sample questions for users to test, making UI more intuitive and responsive
+- I also, through my own user research and testing, discovered what I believe is best use case for CiCi, which as I mentioned earlier is answering broader questions about the CS major at Columbia that tend to come from underclassmen, prospective students, and those who are new to the CS program. 
+  
 ## How to use CiCi
 NOTE: To use CiCi you need to have access to an OpenAI API key and an Active Loop Deep Lake API key. Please add these within the code yourself. 
 Type "flask run" in your terminal and navigate to local host to use CiCi. 
