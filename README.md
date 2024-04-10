@@ -10,6 +10,8 @@ One of the hardest parts of being a CS major at Columbia is not the classes: itâ
 
 CiCi is an AI chatbot trained on Columbia CS advising data. It uses this history along with its broader chatbot capability to answer any questions you have about the CS major, coursework, or career options at Columbia. Generally, CiCi is better at answering broader questions about the major, such as questions that a first- or second-year CS student may have. Unless you provide it extensive proper context, CiCi is not as well equipped to answer specfic questions about your experience in the major (i.e. am I on track to graduate, etc.).
 
+*For a lovely pitch video that encapsulates all that CiCi does, including a demo, in 2 minutes, click [here!](https://youtu.be/Ww39W1hPjcs)*
+
 ## How CiCi was built
 
 Backend: Created embeddings using Columbia CS Advising documents and stored them in a vector database. Then, use the OpenAI API to make a chatbot that answers CS advising questions by searching through the vector database for the most relevant text and compiling them into a single concise answer.
